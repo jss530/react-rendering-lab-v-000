@@ -25,6 +25,13 @@ class Animation extends React.Component {
       );
   };
 
+   // Call this function through the componentWillUpdate() lifecycle method and see that happens! If you've done
+   // it correctly you should see a pink loading bar at the top of the screen every time a new .gif is being loaded.
+
+  componentWillUpdate = () => {
+    this.showLoadingBar();
+  }
+
   showLoadingBar = () => {
     const progressBar = document.getElementById("progress-bar");
     progressBar.className = "off on";
